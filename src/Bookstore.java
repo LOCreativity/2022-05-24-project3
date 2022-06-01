@@ -9,32 +9,29 @@ class BookStore{
 		this.books = new Book[this.num];
 	}
 	public void setBooks() {
-		//Scanner¸¦ ÅëÇÑ Ã¥ Á¤º¸ ÀÔ·Â
+		//Scannerë¥¼ í†µí•œ ì±… ì •ë³´ ìž…ë ¥
 		Scanner st = new Scanner(System.in);
 		
 		for(int i = 0; i< this.num; i++) {
-			System.out.print("Ã¥ ÀÌ¸§: ");
+			System.out.print("ì±… ì´ë¦„: ");
 			String name = st.next();
 		
-			System.out.print("Ã¥ °¡°Ý: ");
+			System.out.print("ì±… ê°€ê²©: ");
 			int price = st.nextInt();
 		 
-			//Àå¸£º° °´Ã¼ ÃÊ±âÈ­
-			System.out.println("Ã¥ Àå¸£(1: ÄÚ¹Í, 2: ¼Ò¼³, 3: ÀâÁö)");
+			//ìž¥ë¥´ë³„ ê°ì²´ ì´ˆê¸°í™”
+			System.out.println("ì±… ìž¥ë¥´(1: ì½”ë¯¹, 2: ì†Œì„¤, 3: ìž¡ì§€)");
 			System.out.print(">>");
 			int genre = st.nextInt();
 			
 			if(genre == 1) {
-				books[i] = new Comic(name, price);
-				((Comic)books[i]).priceSale();
+				this.books[i] = new Comic(name, price);
 			}
 			else if(genre == 2) {
-				books[i] = new Fiction(name, price);
-				((Fiction)books[i]).priceSale();
+				this.books[i] = new Fiction(name, price);
 			}
 			else if(genre == 3) {
-				books[i] = new Magazine(name, price);
-				((Magazine)books[i]).priceSale();
+				this.books[i] = new Magazine(name, price);
 			}
 			
 		}
@@ -42,8 +39,8 @@ class BookStore{
 	}
 	public void printBooksInfo() {
 		for(int i = 0; i < this.num; i++) {
-			books[i].printInfo();
-			System.out.println("ÆÇ¸Å °¡°ÝÀº " + books[i].salePrice() + "¿ø ÀÔ´Ï´Ù.");
+			this.books[i].printInfo();
+			System.out.println("íŒë§¤ ê°€ê²©ì€ " + this.books[i].salePrice() + "ì› ìž…ë‹ˆë‹¤.");
 		}
 	}
 }
