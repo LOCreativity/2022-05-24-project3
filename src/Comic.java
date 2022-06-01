@@ -2,18 +2,14 @@ class Comic extends Book{
 	public Comic(String name, int price) {
 		super(name,price);
 	}
-	//¸Ş¼Òµå ¼±¾ğ¸¸ ÅëÀÏÈ­ ÇÏ°í °¢°¢ÀÇ ±â´ÉÀº ´Ş¶ó¾ß ÇÏ´Â °æ¿ìµµ ÀÖ±â¿¡ Ãß»ó ¸Ş¼Òµå ¿À¹ö¶óÀÌµùÀÌ Á¸ÀçÇÔ.
+	//ë©”ì†Œë“œ ì„ ì–¸ë§Œ í†µì¼í™” í•˜ê³  ê°ê°ì˜ ê¸°ëŠ¥ì€ ë‹¬ë¼ì•¼ í•˜ëŠ” ê²½ìš°ë„ ìˆê¸°ì— ì¶”ìƒ ë©”ì†Œë“œ ì˜¤ë²„ë¼ì´ë”©ì´ ì¡´ì¬í•¨.
 	@Override
 	void printInfo() {
-		System.out.println("Ã¥ÀÇ ÀÌ¸§Àº " + this.name + "ÀÌ°í Àå¸£´Â ÄÚ¹ÍÀÔ´Ï´Ù.");
-		//System.out.println("ÆÇ¸Å °¡°İÀº " + this.price + "¿ø ÀÔ´Ï´Ù.");
+		System.out.println("ì±…ì˜ ì´ë¦„ì€ " + this.name + "ì´ê³  ì¥ë¥´ëŠ” ì½”ë¯¹ì…ë‹ˆë‹¤.");
+		//System.out.println("íŒë§¤ ê°€ê²©ì€ " + this.price + "ì› ì…ë‹ˆë‹¤.");
 	}
 	@Override
 	double salePrice() {
-		return this.price; 
-	}
-	public void priceSale() {
-		//ÄÚ¹Í 10%, ¼Ò¼³ 15%, ÀâÁö 5%ÇÒÀÎ ±İ¾× ¹İÈ¯
-		this.price -= this.price * 0.1;
+		return this.price - this.price * 0.1; 
 	}
 }
